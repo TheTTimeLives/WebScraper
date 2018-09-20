@@ -23,15 +23,15 @@ axios.get("https://www.eventhubs.com/").then(function (response) {
         result.body = $(this).children('p').text();
         result.link = $(this).children('h1').children('a').attr("href");
 
-        // db.Article.create(result)
-        //     .then(function (dbArticle) {
-        //         // View the added result in the console
-        //         // console.log(dbArticle);
-        //     })
-        //     .catch(function (err) {
-        //         // If an error occurred, send it to the client
-        //         // return res.json(err);
-        //     });
+        db.Article.create(result)
+            .then(function (dbArticle) {
+                // View the added result in the console
+                // console.log(dbArticle);
+            })
+            .catch(function (err) {
+                // If an error occurred, send it to the client
+                // return res.json(err);
+            });
 
     });
 
